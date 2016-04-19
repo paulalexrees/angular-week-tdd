@@ -22,4 +22,11 @@ describe('ToDoController', function() {
     var todo = {text: "NewTodo", completed: false};
     expect(ctrl.todos.pop()).toEqual(todo);
   });
+
+  it('removes a todo', function() {
+    ctrl.removeToDo(0)
+
+    var todo = {text: "ToDo2", completed: false};
+    expect(ctrl.todos).toEqual([todo]);
+  });
 });

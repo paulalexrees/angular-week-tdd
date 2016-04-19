@@ -14,4 +14,12 @@ describe('Todos tracker', function(){
     var todo = $$('#todos p').last().getText();
     expect(todo).toEqual('NewToDo: not completed');
   });
+
+  it('can remove a ToDo', function() {
+    browser.get('/');
+    $$('#remove-todo').first().click();
+
+    var todo = $$('#todos p').first().getText();
+    expect(todo).toEqual('ToDo2: not completed');
+  });
 });

@@ -9,9 +9,10 @@
   </head>
   <body>
     <div id="todos" ng-controller="ToDoController as ctrl">
-      <p ng-repeat="todo in ctrl.todos">
-        {{ todo.text }}: {{ todo.completed ? "completed" : "not completed" }}
-      </p>
+      <div ng-repeat="todo in ctrl.todos">
+        <p>{{ todo.text }}: {{ todo.completed ? "completed" : "not completed" }}</p>
+        <button id="remove-todo" ng-click="ctrl.removeToDo($index)">Delete</button>
+      </div>
       <input id="new-todo-name" type="text" ng-model="todoText">
       <button id="add-todo" ng-click="ctrl.addToDo(todoText)">Add a ToDo</button>
     </div>

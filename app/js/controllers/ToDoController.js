@@ -6,4 +6,8 @@ toDoApp.controller('ToDoController', [function() {
   vm.addToDo = function(todoText) {
     vm.todos.push({text: todoText, completed: false});
   };
+
+  vm.removeToDo = function(todoIndex) {
+    vm.todos.splice(todoIndex, 1);
+  };
 }]);
