@@ -22,4 +22,12 @@ describe('Todos tracker', function(){
     var todo = $$('#todos p').first().getText();
     expect(todo).toEqual('ToDo2: not completed');
   });
+
+  it('can mark items as complete', function(){
+    browser.get('/');
+    $$('input[type="checkbox"]').last().click();
+
+    var todo = $$('#todos p').last().getText()
+    expect(todo).toEqual('ToDo2: completed')
+  });
 });
