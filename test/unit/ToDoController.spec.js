@@ -16,7 +16,7 @@ describe('ToDoController', function() {
   it('adds a new todo', function() {
     ctrl.addToDo('NewTodo');
 
-    var todo = {text: "NewTodo", completed: false};
+    var todo = new ToDoFactory("NewTodo")
     expect(ctrl.todos.pop()).toEqual(todo);
   });
 
